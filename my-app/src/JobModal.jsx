@@ -26,7 +26,7 @@ const JobModal = ({ isOpen, onClose }) => {
 
   return (
     <div className="fixed inset-0 bg-gray-100 bg-opacity-90 flex items-center justify-center z-50">
-      <div className="bg-white rounded-lg shadow-2xl w-11/12 max-w-5xl p-8 relative">
+      <div className="bg-white rounded-lg shadow-2xl w-11/12 max-w-5xl max-h-[90vh] overflow-y-auto p-8 relative">
         {/* Header */}
         <h2
           className="text-3xl font-bold text-white text-center py-4 rounded-t-lg mb-6"
@@ -50,11 +50,6 @@ const JobModal = ({ isOpen, onClose }) => {
                 </p>
               </div>
               <div>
-                <p className="break-words">
-                  <strong>Description:</strong> {formData.description || "N/A"}
-                </p>
-              </div>
-              <div>
                 <p>
                   <strong>Category:</strong> {formData.category}
                 </p>
@@ -68,6 +63,11 @@ const JobModal = ({ isOpen, onClose }) => {
                 <p>
                   <strong>Salary:</strong> {formData.minSalary || "N/A"} -{" "}
                   {formData.maxSalary || "N/A"}
+                </p>
+              </div>
+              <div>
+                <p className="break-words">
+                  <strong>Description:</strong> {formData.description || "N/A"}
                 </p>
               </div>
             </div>
